@@ -1,0 +1,63 @@
+<!--<div align="center">
+  <h2>💳 Account Management</h2>
+  <p>View and update your account details.</p>
+
+  <h3>📜 Your Transactions:</h3>
+  <ul *ngIf="transactions.length > 0; else noTransactions">
+    <li *ngFor="let transaction of transactions">
+      ₹{{ transaction }}
+    </li>
+  </ul>
+
+  <ng-template #noTransactions>
+    <p>🚫 No transactions available.</p>
+  </ng-template>
+</div>-->
+
+
+<!--
+<div class="transaction-history">
+  <h3>📜 Account Transaction History</h3>
+  <ul>
+    <li *ngFor="let txn of transactions">
+      {{ txn }}
+    </li>
+  </ul>
+</div>-->
+
+
+
+
+
+<div class="account-container">
+  <!-- Account Transactions Section -->
+  <div class="transaction-section">
+    <h3>📜 Account Transactions</h3>
+    <ul *ngIf="formattedTransactions.length > 0; else noTransactions">
+      <li *ngFor="let txn of formattedTransactions">
+        {{ txn }}
+      </li>
+    </ul>
+    <ng-template #noTransactions>
+      <p class="no-transaction">⚠️ No transaction history found.</p>
+    </ng-template>
+  </div>
+
+  <!-- Transaction Messages Section -->
+  <div class="message-section">
+    <h3>📩 Transaction Messages</h3>
+    <ul *ngIf="messages.length > 0; else noMessages">
+      <li *ngFor="let msg of messages">
+        {{ msg }}
+      </li>
+    </ul>
+    <ng-template #noMessages>
+      <p class="no-message">⚠️ No messages found.</p>
+    </ng-template>
+  </div>
+
+  <button class="refresh-btn" (click)="getTransactions()">🔄 Refresh</button>
+</div>
+
+
+

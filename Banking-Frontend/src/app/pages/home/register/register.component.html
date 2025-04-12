@@ -1,0 +1,105 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link rel="stylesheet" href="register.component.css">
+</head>
+
+<body style="background: linear-gradient(to bottom, #007bff, #003366);">
+  <header class="header-container">
+    <div class="container d-flex justify-content-between align-items-center">
+        <h1>
+          <a routerLink="/" class="text-white text-decoration-none">
+            <i class="fas fa-university"></i> Blue Sky Bank
+          </a>
+        </h1>
+
+    </div>
+  </header>
+  <div class="container mt-5">
+    <div class="card p-4 shadow">
+      <h2 class="text-center">Register</h2>
+
+      <form (ngSubmit)="register()" #registerForm="ngForm">
+        <!-- Username -->
+        <label>Username:</label>
+        <input type="text" [(ngModel)]="Banking.username" name="username" class="form-control" required minlength="3" #username="ngModel">
+        <p class="error-text" *ngIf="username.invalid && username.touched">⚠️ Username must be at least 3 characters.</p>
+        <p *ngIf="usernameExists" class="error-text">⚠️ Username is already taken.</p>
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input type="email" [(ngModel)]="Banking.email" name="email" class="form-control" required #email="ngModel">
+        <p class="error-text" *ngIf="email.invalid && email.touched">⚠️ Please enter a valid email address.</p>
+        <p *ngIf="emailExists" class="error-text">⚠️ Email is already in use.</p>
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <select [(ngModel)]="Banking.gender" name="gender" class="form-control" required #gender="ngModel">
+          <option value="" disabled selected>Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <p class="error-text" *ngIf="gender.invalid && gender.touched">⚠️ Please select your gender.</p>
+
+        <!-- Location -->
+        <label>Location:</label>
+        <input type="text" [(ngModel)]="Banking.location" name="location" class="form-control" required #location="ngModel">
+        <p class="error-text" *ngIf="location.invalid && location.touched">⚠️ Location is required.</p>
+
+        <!-- Nationality -->
+        <label>Nationality:</label>
+        <input type="text" [(ngModel)]="Banking.nationality" name="nationality" class="form-control" required #nationality="ngModel">
+        <p class="error-text" *ngIf="nationality.invalid && nationality.touched">⚠️ Nationality is required.</p>
+
+        <!-- Account Number -->
+        <label>Account No (10 digits):</label>
+        <input type="text" [(ngModel)]="Banking.accountNo" name="accountNo" class="form-control" required pattern="^\d{10}$" #accountNo="ngModel">
+        <p class="error-text" *ngIf="accountNo.invalid && accountNo.touched">⚠️ Account number must be exactly 10 digits.</p>
+        <p *ngIf="accountExists" class="error-text">⚠️ Account number is already registered.</p>
+
+        <!-- CIF Number -->
+        <label>CIF No (11 digits):</label>
+        <input type="number" [(ngModel)]="Banking.cifNo" name="cifNo" class="form-control" required pattern="^\d{11}$" #cifNo="ngModel">
+        <p class="error-text" *ngIf="cifNo.invalid && cifNo.touched">⚠️ CIF number must be exactly 11 digits.</p>
+
+        <!-- Branch Code -->
+        <label>Branch Code (4-6 digits):</label>
+        <input type="number" [(ngModel)]="Banking.branchCode" name="branchCode" class="form-control" required pattern="^\d{4,6}$" #branchCode="ngModel">
+        <p class="error-text" *ngIf="branchCode.invalid && branchCode.touched">⚠️ Branch code must be between 4 to 6 digits.</p>
+
+        <!-- Facility -->
+        <label>Facility:</label>
+        <select [(ngModel)]="Banking.facility" name="facility" class="form-control" required #facility="ngModel">
+          <option value="" disabled selected>Select Facility</option>
+          <option value="Full">Full</option>
+          <option value="Limited">Limited</option>
+          <option value="View">View</option>
+        </select>
+        <p class="error-text" *ngIf="facility.invalid && facility.touched">⚠️ Please select a facility type.</p>
+
+        <!-- Password -->
+        <label>Password (Min 8 characters):</label>
+        <input type="password" [(ngModel)]="Banking.password" name="password" class="form-control" required minlength="8" #password="ngModel">
+        <p class="error-text" *ngIf="password.invalid && password.touched">⚠️ Password must be at least 8 characters.</p>
+
+        <!-- Register Button -->
+        <button type="submit" class="btn btn-primary w-100 mt-3">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+
+</body>

@@ -1,0 +1,25 @@
+<div class="user-management">
+  <h2>👥 User Management</h2>
+  <button (click)="goBack()" class="back-button">⬅️ Back</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.name }}</td>
+        <td>{{ user.role }}</td>
+        <td [class.active]="user.status === 'Active'" [class.suspended]="user.status === 'Suspended'">{{ user.status }}</td>
+        <td>
+          <button (click)="toggleStatus(user)">Toggle Freeze</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

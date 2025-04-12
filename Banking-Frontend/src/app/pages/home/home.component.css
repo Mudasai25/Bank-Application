@@ -1,0 +1,261 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8f9fa;
+}
+
+/* ===== Header ===== */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #004080;
+  color: white;
+}
+
+
+.top-right-buttons {
+  display: flex;
+}
+
+.top-right-buttons button {
+  background: #ffcc00;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* ===== Home Page Background ===== */
+.home-container {
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXk5nkLBZsJNtTfzFrqia5Yl-Dt9Wl7Lc1I0WZSnr3DDHZ0Gn9OLZERuw8MMdid-nq-E8&usqp=CAU') no-repeat center center/cover;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.overlay {
+  position: relative;
+  color: white;
+  max-width: 600px;
+  z-index: 2;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+h1 {
+  font-size: 42px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #ffcc00;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+p {
+  font-size: 20px;
+  color: white;
+}
+
+/* ===== Buttons ===== */
+.btn-primary {
+  background: linear-gradient(135deg, #ffcc00, #ff9900);
+  color: #003366;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #00d4ff, #007bff);
+  color: white;
+}
+
+/* ===== Services Section ===== */
+.services {
+  text-align: center;
+  padding: 50px;
+  background: #f4f4f4;
+}
+
+.service-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 30px;
+}
+
+.service-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 250px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+}
+
+.service-card img {
+  width: 80px;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+/* Testimonials Section with Gradient */
+.testimonials {
+  background: linear-gradient(135deg, #004080, #0073e6); /* Blue Gradient */
+  padding: 50px 0;
+}
+
+/* Testimonial Slider (Side Scrolling) */
+.testimonial-slider {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+}
+
+/* Testimonial Track (Holds the Scrolling Items) */
+.testimonial-track {
+  display: flex;
+  gap: 20px;
+  padding: 10px;
+}
+
+/* Testimonial Card with Matching Gradient */
+.testimonial-card {
+  flex: 0 0 300px; /* Fixed width */
+  background: linear-gradient(135deg, #004080, #0073e6); /* Same Gradient */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  display: inline-block;
+  color: white;
+}
+
+/* Text Inside Testimonial Cards */
+.testimonial-card p {
+  font-size: 16px;
+  color: white;
+  line-height: 1.5;
+}
+
+.testimonial-card h4 {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #ffcc00; /* Gold Color for Names */
+}
+
+/* FontAwesome Quote Icons */
+.testimonial-card i {
+  color: #ffcc00;
+  margin: 0 5px;
+  font-size: 18px;
+}
+
+/* ===== About Us Section ===== */
+.about {
+  background: url('/assets/images/about-bg.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 80px;
+}
+
+.about-content {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ===== Login Section ===== */
+.login-section {
+  background-color: #f8f9fa;
+  padding: 50px 0;
+  border-radius: 10px;
+}
+
+.login-card {
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.login-card i {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+
+.login-card button:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===== Admin Button ===== */
+.admin-btn {
+  background: red;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.admin-btn:hover {
+  background: darkred;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #004080;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}

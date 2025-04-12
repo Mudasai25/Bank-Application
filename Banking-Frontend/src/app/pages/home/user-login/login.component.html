@@ -1,0 +1,66 @@
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="login.component.css">
+</head>
+<body >
+<header class="header-container">
+  <div class="container d-flex justify-content-between align-items-center">
+      <h1>
+        <a routerLink="/" class="text-white text-decoration-none">
+          <i class="fas fa-university"></i> Indian Bank
+        </a>
+      </h1>
+
+  </div>
+</header>
+  <div class="login-container" style="margin-top: 50px;">
+  <h2>User Login</h2>
+
+  <input type="text" [(ngModel)]="user.id" placeholder="Enter Username" required>
+  <input type="password" [(ngModel)]="user.pass" placeholder="Enter Password" required>
+
+  <button (click)="login()">Login</button>
+
+  <div *ngIf="showOtpField">
+    <input type="text" [(ngModel)]="otp" placeholder="Enter OTP" required>
+    <button (click)="verifyOtp()">Verify OTP</button>
+  </div>
+  <div class="register-option">
+    <p>New User?</p>
+    <button (click)="navigateToRegister()">Register</button>
+  </div>
+</div>
+<footer style="background-color: #0d6efd; color: white; text-align: center; padding: 20px; margin-top: 40px;">
+  <div style="max-width: 1200px; margin: auto;">
+      <p style="font-size: 18px; font-weight: 500;">&copy; 2025 Indian Bank. All Rights Reserved.</p>
+
+      <div style="margin-top: 10px;">
+          <a href="/about" style="color: white; text-decoration: none; margin: 0 15px;">About Us</a> |
+          <a href="/services" style="color: white; text-decoration: none; margin: 0 15px;">Services</a> |
+          <a href="/support" style="color: white; text-decoration: none; margin: 0 15px;">Customer Support</a> |
+          <a href="/privacy-policy" style="color: white; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
+      </div>
+
+      <div style="margin-top: 15px;">
+          <a href="https://facebook.com" target="_blank" style="color: white; margin: 0 10px;">
+              <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" style="color: white; margin: 0 10px;">
+              <i class="fab fa-twitter fa-lg"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" style="color: white; margin: 0 10px;">
+              <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" style="color: white; margin: 0 10px;">
+              <i class="fab fa-instagram fa-lg"></i>
+          </a>
+      </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="script.js"></script>
+</body>

@@ -1,0 +1,64 @@
+<div class="admin-dashboard">
+  <aside class="sidebar">
+    <div class="logo">🏦 Admin Panel</div>
+    <div class="user-info" *ngIf="username" >
+      <i class="fas fa-user-circle"></i> Admin : {{ username }}
+    </div>
+    <ul>
+      <li (click)="showSection('overview')" [class.active]="activeSection === 'overview'" >📊 Overview</li>
+      <li (click)="showSection('user-management')" [class.active]="activeSection === 'user-management'" >👥 User Management</li>
+      <li (click)="showSection('audit-trails')" [class.active]="activeSection === 'audit-trails'">📜 Audit Logs</li>
+      <li (click)="showSection('system-config')" [class.active]="activeSection === 'system-config'">⚙ System Config</li>
+      <li class="logout" (click)="logout()">🚪 Logout</li>
+    </ul>
+  </aside>
+
+  <main class="dashboard-content">
+    <header>
+      <h1>Welcome, Admin</h1>
+      <p>Monitor & manage the banking system.</p>
+    </header>
+
+    <section *ngIf="activeSection === 'overview'">
+      <h2>📊 Dashboard Overview</h2>
+      <div class="stats-container">
+        <div class="stat-box">
+          <h3>👥 Users</h3>
+          <p>{{ dashboardData.totalUsers || 0 }} Active Users</p>
+        </div>
+        <div class="stat-box">
+          <h3>💰 Total Balance</h3>
+          <p>₹{{ dashboardData.totalBalance || 0 }}</p>
+        </div>
+        <div class="stat-box">
+          <h3>🏦 Loans Requested</h3>
+          <p>₹{{ dashboardData.totalLoanRequested || 0 }}</p>
+        </div>
+        <div class="stat-box">
+          <h3>✅ Loans Approved</h3>
+          <p>₹{{ dashboardData.totalLoanApproved || 0 }}</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section *ngIf="activeSection === 'user-management'">
+      <h2>👤 User Management</h2>
+      <p>Manage user accounts, roles, and permissions.</p>
+      <button class="primary-btn" (click)="navigateToSection('user-management')">View Users</button>
+    </section>
+
+
+    <section *ngIf="activeSection === 'audit-trails'">
+      <h2>📜 Audit Logs</h2>
+      <p>Review system activity and security logs.</p>
+      <button class="primary-btn">View Audit Logs</button>
+    </section>
+
+    <section *ngIf="activeSection === 'system-config'">
+      <h2>⚙ System Configuration</h2>
+      <p>Modify system settings and security parameters.</p>
+      <button class="primary-btn" (click)="navigateToSection('system-config')">Manage Settings</button>
+    </section>
+  </main>
+</div>

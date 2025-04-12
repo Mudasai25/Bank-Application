@@ -1,0 +1,20 @@
+<body style="background: linear-gradient(to bottom, #007bff, #003366);">
+<div class="support-container">
+  <h2>Customer Support</h2>
+  <p>If you wish to contact us, please leave us a message.</p>
+
+  <form (ngSubmit)="submitQuery()" #supportForm="ngForm">
+    <div class="form-group">
+      <label for="subject">Subject:</label>
+      <input type="text" [(ngModel)]="query.subject" name="subject" id="subject" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="message">Message:</label>
+      <textarea [(ngModel)]="query.message" name="message" id="message" class="form-control" required></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit" [disabled]="!supportForm.valid">Submit Query</button>
+  </form>
+</div>
+</body>

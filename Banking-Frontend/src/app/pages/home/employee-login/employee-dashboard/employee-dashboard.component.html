@@ -1,0 +1,93 @@
+<div class="employee-dashboard">
+
+  <header>
+    <h1>👨‍💼 Employee Dashboard</h1>
+    <div class="user-info" *ngIf="username" >
+      <i class="fas fa-user-circle"></i> Employee : {{ username }}
+    </div>
+    <button class="logout-btn" (click)="logout()">🚪 Logout</button>
+  </header>
+
+  <div class="tabs">
+    <button (click)="navigateToSection('users')">All User Accounts</button>
+    <button (click)="navigateToSection('loans')">Loan Management</button>
+    <button (click)="navigateToSection('reports')">Reporting & Analytics</button>
+    <button (click)="navigateToSection('feedback')">Customer Feedback</button>
+  </div>
+
+  <div *ngIf="activeSection === 'users'" class="content-section">
+    <h2>📋 User Accounts</h2>
+    <table>
+      <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Balance</th>
+        <th>History</th>
+      </tr>
+      <tr *ngFor="let user of users">
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>₹{{ user.balance }}</td>
+        <td><button class="btn-view" (click)="viewHistory(user)">🔍 View History</button></td>
+      </tr>
+    </table>
+  </div>
+
+  <!--<div *ngIf="activeSection === 'loans'" class="content-section">
+    <h2>🏦 Loan Management</h2>
+    <ul>
+      <li *ngFor="let loan of loans">
+        <strong>{{ loan.username }}</strong> - ₹{{ loan.amount }} ({{ loan.status }})
+        <button class="btn-approve" (click)="approveLoan(loan)">✅ Approve</button>
+        <button class="btn-reject" (click)="rejectLoan(loan)">❌ Reject</button>
+      </li>
+    </ul>
+  </div>-->
+
+  <div *ngIf="activeSection === 'loans'" class="content-section">
+    <h2>Loan Applications</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let loan of loans">
+          <td>{{ loan.username }}</td>
+          <td>₹{{ loan.neededLoan }}</td>
+          <td>{{ loan.loanType }}</td>
+          <td [ngClass]="{ 'approved': loan.status === 'Approved', 'pending': loan.status === 'Pending' , 'Rejected': loan.status === 'Rejected' }">
+            {{ loan.status }}
+          </td>
+          <td>
+            <button *ngIf="loan.status === 'Pending'" (click)="approveLoan(loan)">✅ Approve</button>
+            <button *ngIf="loan.status === 'Pending'" (click)="rejectLoan(loan)">❌ Reject</button>
+            <button *ngIf="loan.status !== 'Pending'" (click)="viewHistory(loan)">🔍 View History</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+  <div *ngIf="activeSection === 'reports'" class="content-section">
+    <h2>📊 Financial Reports</h2>
+    <p>Generate reports for user activity, loans, and transactions.</p>
+    <button class="btn-generate" (click)="generateReport()">📄 Download Report</button>
+  </div>
+
+  <div *ngIf="activeSection === 'feedback'" class="content-section">
+    <h2>💬 Customer Feedback</h2>
+    <div *ngFor="let feedback of feedbacks" class="feedback-item">
+      <p><strong>{{ feedback.Username }}:</strong> {{ feedback.Message }}</p>
+      <button class="btn-respond" (click)="respondToFeedback(feedback)">💌 Respond</button>
+    </div>
+</div>
+
+</div>

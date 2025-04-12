@@ -1,0 +1,135 @@
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom, #007bff, #003366);
+  color: white;
+  padding: 30px;
+  height: 100vh;
+  position: relative;
+}
+
+/* Balance Container in Top-Right Corner */
+.balance-container {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.refresh-btn {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background: #ffcc00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background: #ffdb4d;
+}
+
+/* Options Container */
+.options-container {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.options-container button {
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: bold;
+  background: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.options-container button:hover {
+  background: #ffdb4d;
+  transform: scale(1.05);
+}
+
+/* General Card Styling */
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 400px;
+  margin: 15px 0;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Input Fields */
+input, select {
+  width: 85%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid white;
+  border-radius: 5px;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.2);
+  color: rgb(17, 16, 16);
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(19, 17, 17, 0.7);
+}
+
+select {
+  cursor: pointer;
+}
+
+/* Buttons */
+button {
+  width: 40%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  background: #ffcc00;
+  color: black;
+}
+
+button:hover {
+  background: #ffdb4d;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .balance-container {
+    right: 10px;
+    top: 10px;
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .options-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}

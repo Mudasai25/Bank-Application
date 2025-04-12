@@ -1,0 +1,104 @@
+/* Center the content beautifully
+div[align="center"] {
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 500px;
+  margin: 40px auto;
+  font-family: 'Poppins', sans-serif;
+}
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  background: -webkit-linear-gradient(45deg, #ffcc00, #ff6600);
+  -webkit-background-clip: text; /* Safari & Chrome
+  -moz-background-clip: text;
+  -o-background-clip: text; /* Opera
+  -ms-background-clip: text; /* Edge (older versions)
+  background-clip: text; /* Standard
+  -webkit-text-fill-color: transparent;
+}
+
+h3 {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #ffdd57;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: transform 0.3s, background 0.3s;
+}
+
+/* Modern Styling for Transaction Page */
+.account-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: #1e1e2f;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  max-width: 600px;
+  margin: auto;
+}
+
+.transaction-section, .message-section {
+  padding: 15px;
+  background: #292945;
+  border-radius: 8px;
+}
+
+h3 {
+  color: #ffcc00;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 10px;
+  background: #3a3a5e;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+.refresh-btn {
+  background: #ffcc00;
+  color: black;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+  display: block;
+  margin: auto;
+  border: none;
+}
+
+.refresh-btn:hover {
+  background: #e6b800;
+}
+

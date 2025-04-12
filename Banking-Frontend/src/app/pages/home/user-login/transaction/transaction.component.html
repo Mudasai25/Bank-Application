@@ -1,0 +1,12 @@
+<body><div class="transaction-form">
+  <h3>Transfer Money</h3>
+
+  <input type="text" [(ngModel)]="receiverId" placeholder="Enter Receiver Username" />
+  <input type="number" [(ngModel)]="amount" placeholder="Enter Amount" />
+
+  <button (click)="transferMoney()">Send Money</button>
+
+  <p *ngIf="message">{{ message }}</p>
+
+</div>
+</body>

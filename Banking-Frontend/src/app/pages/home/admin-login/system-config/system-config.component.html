@@ -1,0 +1,24 @@
+<div class="system-config">
+  <h2>⚙ System Configuration</h2>
+  <button (click)="goBack()" class="back-button">⬅️ Back</button>
+  <div class="config-item">
+    <label>Max Login Attempts:</label>
+    <input type="number" [(ngModel)]="settings['maxLoginAttempts']">
+  </div>
+
+  <div class="config-item">
+    <label>Session Timeout (mins):</label>
+    <input type="number" [(ngModel)]="settings['sessionTimeout']">
+  </div>
+
+  <div class="config-item">
+    <label>Security Level:</label>
+    <select [(ngModel)]="settings['securityLevel']">
+      <option value="Low">Low</option>
+      <option value="Medium">Medium</option>
+      <option value="High">High</option>
+    </select>
+  </div>
+
+  <button (click)="updateSetting('securityLevel', settings['securityLevel'])">Save Settings</button>
+</div>

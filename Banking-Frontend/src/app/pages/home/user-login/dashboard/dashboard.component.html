@@ -1,0 +1,78 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <link rel="stylesheet" href="dashboard.component.css">
+</head>
+<body><div class="dashboard-container">
+  <div class="balance-container">
+    <h3>Balance: ₹{{ balance }}</h3>
+    <button class="refresh-btn" (click)="getBalance()">🔄</button>
+  </div>
+
+  <h2>Welcome to Your Dashboard</h2>
+
+  <div class="options-container">
+    <button (click)="showSection('deposit')">Deposit</button>
+    <button (click)="showSection('withdraw')">Withdraw</button>
+    <button (click)="showSection('loan')">Apply Loan</button>
+  </div>
+
+  <div class="card" *ngIf="activeSection === 'deposit'">
+    <h3>Deposit Money</h3>
+    <input type="number" [(ngModel)]="depositAmount" placeholder="Enter amount">
+    <button (click)="deposit()">Deposit</button>
+  </div>
+
+  <div class="card" *ngIf="activeSection === 'withdraw'">
+    <h3>Withdraw Money</h3>
+    <input type="number" [(ngModel)]="withdrawAmount" placeholder="Enter amount">
+    <button (click)="withdraw()">Withdraw</button>
+  </div>
+
+  <div class="card" *ngIf="activeSection === 'loan'">
+    <h3>Apply for a Loan</h3>
+    <input type="number" [(ngModel)]="loanAmount" placeholder="Loan Amount">
+    <select [(ngModel)]="loanType">
+      <option value="" disabled selected>Select Loan Type</option>
+      <option value="vehicle">Vehicle Loan</option>
+      <option value="home">Home Loan</option>
+      <option value="education">Education Loan</option>
+      <option value="personal">Personal Loan</option>
+    </select>
+    <input type="number" [(ngModel)]="loanDuration" placeholder="Duration (years)">
+    <button (click)="applyLoan()">Apply Loan</button>
+  </div>
+</div>
+<footer style="background-color: #0d6efd; color: white; text-align: center; padding: 20px; margin-top: 40px;">
+  <div style="max-width: 1200px; margin: auto;">
+      <p style="font-size: 18px; font-weight: 500;">&copy; 2025 Blue Sky Bank. All Rights Reserved.</p>
+
+      <div style="margin-top: 10px;">
+          <a href="/about" style="color: white; text-decoration: none; margin: 0 15px;">About Us</a> |
+          <a href="/services" style="color: white; text-decoration: none; margin: 0 15px;">Services</a> |
+          <a href="/support" style="color: white; text-decoration: none; margin: 0 15px;">Customer Support</a> |
+          <a href="/privacy-policy" style="color: white; text-decoration: none; margin: 0 15px;">Privacy Policy</a>
+      </div>
+
+      <div style="margin-top: 15px;">
+          <a href="https://facebook.com" target="_blank" style="color: white; margin: 0 10px;">
+              <i class="fab fa-facebook fa-lg"></i>
+          </a>
+          <a href="https://twitter.com" target="_blank" style="color: white; margin: 0 10px;">
+              <i class="fab fa-twitter fa-lg"></i>
+          </a>
+          <a href="https://linkedin.com" target="_blank" style="color: white; margin: 0 10px;">
+              <i class="fab fa-linkedin fa-lg"></i>
+          </a>
+          <a href="https://instagram.com" target="_blank" style="color: white; margin: 0 10px;">
+              <i class="fab fa-instagram fa-lg"></i>
+          </a>
+      </div>
+  </div>
+</footer>
+</body>
