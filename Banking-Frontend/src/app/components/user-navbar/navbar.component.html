@@ -1,0 +1,24 @@
+<nav class="navbar">
+  <div class="bank-name">🏦 Blue Sky Bank</div>
+
+<div class="user-info" (click)="toggleDropdown($event)" *ngIf="username">
+  <i class="fas fa-user-circle"></i> {{ username }}
+</div>
+<div *ngIf="showDropdown" class="dropdown-menu">
+  <p><strong>Username:</strong> {{ userData?.username }}</p>
+  <p><strong>Email:</strong> {{ userData?.email }}</p>
+  <p><strong>Account No:</strong> {{ userData?.accountNo }}</p>
+  <p><strong>CIF No:</strong> {{ userData?.cifNo }}</p>
+  <p><strong>Branch Code:</strong> {{ userData?.branchCode }}</p>
+  <p><strong>Location:</strong> {{ userData?.location }}</p>
+</div>
+
+
+  <div class="nav-buttons">
+    <button (click)="navigateTo('/dashboard')">Dashboard</button>
+    <button (click)="navigateTo('/transaction-form')">Transaction</button>
+    <button (click)="navigateTo('/account')">Account</button>
+    <button (click)="navigateTo('/support')">Support</button>
+    <button (click)="navigateTo('/')">Log out</button>
+  </div>
+</nav>

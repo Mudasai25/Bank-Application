@@ -1,0 +1,13 @@
+body {
+  font-family: Arial, sans-serif;
+}
+.home-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+.banking {
+  max-width: 80%;
+  height: auto;
+}
